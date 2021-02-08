@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+        web:
+                image: jwilder/nginx-proxy:latest
+                ports:
+                        - "80:80"
+                volumes:
+                        - /var/run/docker.sock:/tmp/docker.sock:ro
+                networks:
+                        - "default"
+                        - "backend"
+
+        app:
+                build:
+                        context: app_gethashes/
+                        dockerfile: Dockerfile
+                restart: unless-stopped
+                volumes:
+                        - /tmp:/tmp
+                environment:
+                        - VIRTUAL_HOST=gethashes.localhost
+                depends_on:
+                        - "web"
+                networks:
+                        - "backend"
+
+networks:
+        backend:

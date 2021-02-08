@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Get Hashes</title>
+		<link rel="icon" type="image/png" href="/img/favicon.png"/>
+	</head>
+	<body>
+		<br><br>
+		<center>
+			<h1>Get Hashes</h1>
+		</center>
+		<form action="/string" method="POST" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Get string hashes</legend>
+				<label for="ct">Clear text</label><br>
+				<input type="text" id="ct" name="ct"/><br>
+				<label for="hash">Pich a hash type:</label><br>
+				<select id="hash" name="hash">
+					<option value="md5">MD5</option>
+					<option value="sha1">SHA1</option>
+					<option value="sha224">SHA224</option>
+					<option value="sha256">SHA256</option>
+					<option value="sha384">SHA384</option>
+					<option value="sha512">SHA512</option>
+					<option value="sha512_224">SHA512_224</option>
+					<option value="sha512_256">SHA512_256</option>
+					<option value="all">ALL</option>
+				</select><br>
+				<br>
+				<input type="submit" value="submit"/>
+			</fieldset>
+		</form><br>
+		<form action="/file" method="POST" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Get file hashes</legend>
+				<label for="file">Pick file to upload:</label><br>
+				<input type="file" id="file" name="file"/><br>
+				<label for="hash">Pick a hash type:</label><br>
+				<select id="hash" name="hash">
+					<option value="md5">MD5</option>
+					<option value="sha1">SHA1</option>
+					<option value="sha224">SHA224</option>
+					<option value="sha256">SHA256</option>
+					<option value="sha384">SHA384</option>
+					<option value="sha512">SHA512</option>
+					<option value="sha512_224">SHA512_224</option>
+					<option value="sha512_256">SHA512_256</option>
+					<option value="all">ALL</option>
+				</select><br>
+				<br>
+				<input type="submit" value="submit"/>
+			</fieldset>
+		</form>
+	</body>
+</html>
